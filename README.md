@@ -9,11 +9,15 @@
 7. [Index](#index)
 
 ## <a name="introduction"></a> 1. Introduction
+This section should describe the project and the software product being to be built. No text is necessary between the heading above and the heading below unless otherwise desired.
 ### 1.1 Project Overview
-
+Give a short summary of the project objectives, the software to be delivered, major activities, major deliverables, major milestones, required resources, and top-level schedule and budget. Describe the relationship of this project to other projects, if appropriate.
 ### 1.2 Project Deliverables
+List all of the major items to be delivered to the customer (external customer, in-house user, etc.).
 
+List the deliverables, delivery dates, delivery locations, delivery method (email, FTP, CD, etc.), and quantities necessary to satisfy the project’s requirements.
 ### 1.3 Evolution of the Software Project Management Plan
+Describe how you expect this document to evolve over time. This section should be very similar to the "Revision Chart" earlier in the document. The revision chart should list what has already been done to this document. This section should list what is expected to be done to this document.
 
 ### 1.4 Reference Materials
 * [Api Platform](https://api-platform.com/) - REST Framework for Symfony
@@ -27,7 +31,7 @@
 * [NPM](https://www.npmjs.com/) - JavaScript dependencies manager
 * [Heroku](https://heroku.com) - Cloud hosting
 * [Cloudflare](https://cloudflare.com) - Cloud hosting CDN (for static files such as JS, Css, Images etc)
-* [DropZone](http://www.dropzonejs.com/) - JavaScript drag-n-drop file uploader plugin
+* [Dropone](http://www.dropzonejs.com/) - JavaScript drag-n-drop file uploader plugin
 * [JSLint](http://www.jslint.com/) - JavaScript code quality inspector / Enforcer. 
 
 ### 1.5 Definitions and Acronyms
@@ -39,9 +43,17 @@
 > A RESTful API breaks down a transaction to create a series of small modules. Each module addresses a particular underlying part of the transaction. This modularity provides developers with a lot of flexibility.
 
 ## <a name="project-organisation"></a> 2. Project Organisation
+In this section, describe the process model (e.g., lifecycle model), the organizational structure (e.g., chain of command or management reporting structure), and responsibilities of individuals on the project.
+
+No text is necessary between the heading above and the heading below unless otherwise desired.
 ### 2.1 Process Model
-### 2.2 Organizational Structure
-### 2.3 Organizational Boundaries and Interfaces
+Describe the following items:
+* The project’s lifecycle model (e.g., waterfall model, spiral model, evolutionary prototyping model, etc.)
+* The project’s major milestones (content and dates/timing). This should include a text description of the meaning of each milestone plus a Gantt chart or other high-level description of the project’s schedule.
+* Major work products, including content and timing. These should be listed in a table like the following one:
+### 2.2 Organisational Structure
+
+### 2.3 Organisational Boundaries and Interfaces
 ### 2.4 Project Responsibilities
 ## <a name="managerial-process"></a> 3. Managerial Process
 ### 3.1 Management Objectives and Priorities
