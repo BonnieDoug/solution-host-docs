@@ -64,6 +64,65 @@ Describe the following items:
 ## <a name="technical-process"></a> 4. Technical Process
 ### 4.1 Methods, Tools, and Techniques
 ### 4.2 Software Documentation
+#### 4.2.1 Security API
+##### To-do
+The sole responsibility of the `security-api` is to authenticate users following a login request (JSON or Form). Once authenticated return with a JWT token response. This JWT token should then be validated on all requests for protected data. This authentication check will be processed by the API in which you are requesting e/g `sfp-api`.
+###### Login requirements
+- Client ID
+- Username / email*
+- Password *
+A client ID is not necessarily required, as such we must check for non-unique username/email before we can allow login.
+
+###### Entities
+An entity is an object which describes the structure of your database tables. These allow for less repetition within the code base and standardize the way data is retrieved. We will use Doctrine ORM for this. Entities required:
+- [ ] User
+- [ ] Client
+- [ ] AppStatus
+- [ ] Privilege
+- [ ] Role
+
+###### Roles
+User roles should be well defined, they will form a tree structure starting from `ROLE_READ_ONLY` to `ROLE_SUPER_ADMIN`, all authenticated users should be `ROLE_READ_ONLY`, this role should only provide the current user with reading access to any entity they own or are in some way connected to. The role hierarchy should trickle down, so a user with the maximum role should also inherit all previous roles. Entities should be secured by role.
+
+- `ROLE_USER`  - Only read entities owned by this user, useful if write privilege has been revoked
+- - `ROLE_WRITE` - Write own entities. No access to other entities, cannot delete or approve.
+- - - `ROLE_SUPERVISOR` - Can read, write, retire entities owned by supervisors team. Cannot modify entities owned by users with higher privileges. Can approve entities.
+- - - - `ROLE_MANAGER` - Can read, write, retire entities owned by the entire client.
+- - - - - `ROLE_CLIENT_DIRECTOR` - Can read, write,  retire, delete, modify and approve all entities owned by client.
+- `ROLE_ADMIN` - Replaces current admin account. Allows the user to modify, create and read entities. Cannot Delete. Limited access to certain parts, depending on rules defined by James etc.
+- - `ROLE_CONSULTANT` - Access to privileges that only consultants should have access to.
+- - - `ROLE_SUPER_ADMIN` - Like `ROLE_ADMIN` but with further powers. Possibly for Technical and Directors?
+- -  `ROLE_STAFF` - Access to 000.
+- - - `ROLE_SALES` - Access to own clip.
+- - - - `ROLE_SALES_LEADER` - Access to team clips
+- - - `ROLE_STAFF_ADMIN` - Access to all clips
+- - - - `ROLE_STAFF_ACCOUNTS` - Access to stuff only accounts will need.
+- - - - `ROLE_STAFF_TECH` - Tech access
+- - - - `ROLE_STAFF_DIRECTOR` - Access to everything
+- - - - - `ROLE_STAFF_ADMIN` - Further access
+- - - - - - `ROLE_STAFF_SUPER_ADMIN` - Full access (James only?)
+
+e.g `ROLE_STAFF_ADMIN` would become an array as below:
+```
+$role = [
+    'ROLE_USER',
+    'ROLE_STAFF',
+    'ROLE_STAFF_ADMIN'
+];
+```
+###### Bridge
+Modify existing security stuff, in Portal, to use new Security-Api. Places requiring changes:
+- [ ] Portal/web/apps/userlogin/backend.php::login() 
+- [ ] Portal/web/apps/userlogin/backend.php::is_logged()
+- [ ] HS-Direct/login
+- [ ] EL-Direct/login
+
+###### Firewall
+
+
+###### JWT Encoder/Decoder
+
+
 ### 4.3 Project Support Functions
 ## <a name="budget"></a> 5. Work Packages, Schedule, and Budget
 ### 5.1 Work Packages
