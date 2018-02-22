@@ -66,7 +66,7 @@ Describe the following items:
 ### 4.2 Software Documentation
 #### 4.2.1 Security API
 ##### To-do
-The sole responsibility of the `security-api` is to authenticate users following a login request (JSON or Form). Once authenticated return with a JWT token response. This JWT token should then be validated on all requests for protected data. This authentication check will be processed by the API in which you are requesting e/g `sfp-api`.
+The sole responsibility of the [security-api](https://github.com/HS-Direct/security-api/) is to authenticate users following a login request (JSON or Form). Once authenticated return with a JWT token response. This JWT token should then be validated on all requests for protected data. This authentication check will be processed by the API in which you are requesting e/g `sfp-api`.
 ###### Login requirements
 - Client ID
 - Username / email*
