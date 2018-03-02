@@ -82,9 +82,11 @@ Setting up a new api project involves a few steps. These steps could differ slig
 7. Setup .env to point at the right database etc.
 8. Decide which user authentication you need. There is, at the time of writing, 3 different User providers. FFC-Contractor / My-Task and Client. Once decided, goto a project you know is using that authentication and copy the project/config/jwt folder into your config folder. Grab the Api security section from the security.yaml and probably at this point ask Doug to help.
 9. Run `php bin/console server:start` to see if all has worked correctly to this point.
-10. ```git add .
+10. ```
+     git add .
      git commit -m "Added dependencies
-     git push```
+     git push
+     ```
 
 ### 4.2 Software Documentation
 #### 4.2.1 Security API
