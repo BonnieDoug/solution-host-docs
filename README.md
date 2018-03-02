@@ -91,7 +91,7 @@ Setting up a new api project involves a few steps. These steps could differ slig
 9. Run `php bin/console server:start` to see if all has worked correctly to this point.
 10. ```
      git add .
-     git commit -m "Added dependencies
+     git commit -m "Added dependencies"
      git push
      ```
 
