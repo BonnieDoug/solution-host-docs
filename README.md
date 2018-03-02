@@ -103,6 +103,7 @@ The sole responsibility of the [security-api](https://github.com/HS-Direct/secur
 - Client ID
 - Username / email*
 - Password *
+
 A client ID is not necessarily required, as such we must check for non-unique username/email before we can allow login.
 
 ###### Entities
