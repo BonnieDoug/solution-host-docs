@@ -69,10 +69,12 @@ Setting up a new api project involves a few steps. These steps could differ slig
 1. Setup a new **BLANK** repository on the HS-Direct GitHub. Fork this repository into your own account.
 2. On your machine, in the directory you store sites, use the [Symfony Composer installer](https://symfony.com/download) to begin a fresh Symfony projectby running `composer create-project symfony/skeleton name-of-project` Once the install has completed `cd` into the new directory.
 3. Run `git init` to initialise the directory/site as a git repository.
-4. Run ```
+4. Run 
+        ```
         git add .
         git commit -m "Init"
-        ``` To add the current files to git.
+        ```
+        To add the current files to git.
 5. Add the upstream and origin branches to the directory by running
    * `git remote add origin git@github.com:YourName/Name-of-repo.git`
    * `git push -u origin master`
